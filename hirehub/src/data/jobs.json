@@ -1,0 +1,310 @@
+[
+  {
+    "id": "1",
+    "title": "Senior Frontend Developer",
+    "company": "Tech Innovators Inc.",
+    "companyLogo": "T",
+    "location": "San Francisco, CA",
+    "experienceLevel": "Senior",
+    "jobType": "Full-time",
+    "category": "Frontend",
+    "salary": {
+      "min": 120000,
+      "max": 150000,
+      "currency": "USD"
+    },
+    "description": "We are looking for a highly skilled Senior Frontend Developer to join our dynamic team. You will be responsible for leading the development of our next-generation web applications, ensuring high performance and a seamless user experience.",
+    "responsibilities": [
+      "Lead the development of client-side web applications using React.js and TypeScript",
+      "Collaborate with UX/UI designers to translate designs and wireframes into high-quality code",
+      "Optimize applications for maximum speed and scalability",
+      "Mentor junior developers and contribute to team's growth",
+      "Stay up-to-date with emerging frontend technologies and industry trends",
+      "Participate in code reviews to ensure code quality and maintainability"
+    ],
+    "qualifications": [
+      "Bachelor's degree in Computer Science or a related field",
+      "5+ years of professional experience in frontend development",
+      "Proficiency in React.js, TypeScript, JavaScript, HTML5, and CSS3",
+      "Strong understanding of modern web development principles and best practices",
+      "Experience with state management libraries (e.g., Redux, Zustand)",
+      "Familiarity with RESTful APIs and asynchronous request handling",
+      "Excellent problem-solving skills and attention to detail",
+      "Ability to work independently and as part of a team"
+    ],
+    "benefits": [
+      "Competitive salary and equity",
+      "Health, dental, and vision insurance",
+      "Flexible work arrangements",
+      "Professional development opportunities",
+      "Collaborative team environment"
+    ],
+    "companyDescription": "Tech Innovators Inc. is a leading technology company specializing in cutting-edge AI and cloud solutions. We are dedicated to fostering a collaborative environment where innovation thrives and employees are empowered to make a significant impact.",
+    "companyWebsite": "https://www.techinnovators.com",
+    "companyLinkedin": "https://www.linkedin.com/company/techinnovators",
+    "postedDate": "2024-01-15"
+  },
+  {
+    "id": "2",
+    "title": "Product Manager",
+    "company": "Innovate Corp.",
+    "companyLogo": "I",
+    "location": "San Francisco, USA",
+    "experienceLevel": "Mid-level",
+    "jobType": "Full-time",
+    "category": "Product",
+    "salary": {
+      "min": 100000,
+      "max": 130000,
+      "currency": "USD"
+    },
+    "description": "Join our product team to drive innovation and deliver exceptional user experiences. You'll work cross-functionally to define product strategy and roadmap.",
+    "responsibilities": [
+      "Define and communicate product vision and strategy",
+      "Conduct market research and competitive analysis",
+      "Gather and prioritize product requirements",
+      "Work closely with engineering, design, and marketing teams",
+      "Analyze product metrics and user feedback"
+    ],
+    "qualifications": [
+      "3-5 years of product management experience",
+      "Strong analytical and problem-solving skills",
+      "Excellent communication and leadership abilities",
+      "Experience with agile methodologies",
+      "Bachelor's degree in Business, Computer Science, or related field"
+    ],
+    "benefits": [
+      "Stock options",
+      "Remote work flexibility",
+      "Learning and development budget",
+      "Team offsites and events"
+    ],
+    "companyDescription": "Innovate Corp. is transforming how businesses operate through innovative SaaS solutions.",
+    "companyWebsite": "https://www.innovatecorp.com",
+    "postedDate": "2024-01-20"
+  },
+  {
+    "id": "3",
+    "title": "Data Scientist",
+    "company": "Data Insights Co.",
+    "companyLogo": "D",
+    "location": "Seattle, USA",
+    "experienceLevel": "Mid-level",
+    "jobType": "Full-time",
+    "category": "Data Science",
+    "salary": {
+      "min": 110000,
+      "max": 140000,
+      "currency": "USD"
+    },
+    "description": "We're seeking a talented Data Scientist to help us extract insights from complex datasets and build predictive models.",
+    "responsibilities": [
+      "Develop and implement machine learning models",
+      "Analyze large datasets to identify patterns and trends",
+      "Create data visualizations and reports",
+      "Collaborate with product teams to integrate ML solutions",
+      "Present findings to stakeholders"
+    ],
+    "qualifications": [
+      "Master's degree in Data Science, Statistics, or related field",
+      "2-4 years of experience in data science or analytics",
+      "Proficiency in Python and SQL",
+      "Experience with ML frameworks (TensorFlow, PyTorch, scikit-learn)",
+      "Strong statistical analysis skills"
+    ],
+    "companyDescription": "Data Insights Co. helps companies make data-driven decisions through advanced analytics.",
+    "postedDate": "2024-01-18"
+  },
+  {
+    "id": "4",
+    "title": "UX/UI Designer",
+    "company": "Creative Agency",
+    "companyLogo": "C",
+    "location": "London, UK",
+    "experienceLevel": "Mid-level",
+    "jobType": "Full-time",
+    "category": "Design",
+    "salary": {
+      "min": 60000,
+      "max": 80000,
+      "currency": "GBP"
+    },
+    "description": "Join our creative team to design beautiful and intuitive user experiences for web and mobile applications.",
+    "responsibilities": [
+      "Create wireframes, prototypes, and high-fidelity designs",
+      "Conduct user research and usability testing",
+      "Collaborate with developers to implement designs",
+      "Maintain design systems and component libraries",
+      "Present design concepts to clients and stakeholders"
+    ],
+    "qualifications": [
+      "3+ years of UX/UI design experience",
+      "Proficiency in Figma, Sketch, or Adobe XD",
+      "Strong portfolio demonstrating design skills",
+      "Understanding of user-centered design principles",
+      "Excellent communication skills"
+    ],
+    "companyDescription": "Creative Agency delivers exceptional digital experiences for global brands.",
+    "postedDate": "2024-01-22"
+  },
+  {
+    "id": "5",
+    "title": "Marketing Specialist",
+    "company": "Global Brands",
+    "companyLogo": "G",
+    "location": "Remote",
+    "experienceLevel": "Entry-level",
+    "jobType": "Remote",
+    "category": "Marketing",
+    "salary": {
+      "min": 50000,
+      "max": 70000,
+      "currency": "USD"
+    },
+    "description": "We're looking for an enthusiastic Marketing Specialist to support our digital marketing campaigns.",
+    "responsibilities": [
+      "Execute digital marketing campaigns across multiple channels",
+      "Create engaging content for social media and email",
+      "Analyze campaign performance and metrics",
+      "Assist with SEO and content strategy",
+      "Support event planning and execution"
+    ],
+    "qualifications": [
+      "1-2 years of marketing experience",
+      "Knowledge of digital marketing tools and platforms",
+      "Strong writing and communication skills",
+      "Bachelor's degree in Marketing or related field",
+      "Creative thinking and problem-solving abilities"
+    ],
+    "companyDescription": "Global Brands is a marketing agency working with Fortune 500 companies.",
+    "postedDate": "2024-01-25"
+  },
+  {
+    "id": "6",
+    "title": "DevOps Engineer",
+    "company": "CloudWorks",
+    "companyLogo": "C",
+    "location": "Austin, USA",
+    "experienceLevel": "Senior",
+    "jobType": "Full-time",
+    "category": "DevOps",
+    "salary": {
+      "min": 130000,
+      "max": 160000,
+      "currency": "USD"
+    },
+    "description": "Join our infrastructure team to build and maintain scalable cloud solutions.",
+    "responsibilities": [
+      "Design and implement CI/CD pipelines",
+      "Manage cloud infrastructure on AWS/Azure/GCP",
+      "Automate deployment and monitoring processes",
+      "Ensure system security and compliance",
+      "Troubleshoot production issues"
+    ],
+    "qualifications": [
+      "4+ years of DevOps experience",
+      "Strong knowledge of containerization (Docker, Kubernetes)",
+      "Experience with infrastructure as code (Terraform, CloudFormation)",
+      "Proficiency in scripting languages (Python, Bash)",
+      "Understanding of networking and security principles"
+    ],
+    "companyDescription": "CloudWorks provides enterprise cloud solutions and managed services.",
+    "postedDate": "2024-01-17"
+  },
+  {
+    "id": "7",
+    "title": "Fullstack Developer",
+    "company": "WebCrafters",
+    "companyLogo": "W",
+    "location": "Berlin, Germany",
+    "experienceLevel": "Mid-level",
+    "jobType": "Full-time",
+    "category": "Fullstack",
+    "salary": {
+      "min": 70000,
+      "max": 90000,
+      "currency": "EUR"
+    },
+    "description": "We need a versatile Fullstack Developer to work on exciting projects across our tech stack.",
+    "responsibilities": [
+      "Develop both frontend and backend features",
+      "Build RESTful APIs and integrate third-party services",
+      "Optimize application performance",
+      "Write unit and integration tests",
+      "Participate in agile ceremonies"
+    ],
+    "qualifications": [
+      "3-5 years of fullstack development experience",
+      "Proficiency in React.js and Node.js",
+      "Experience with databases (PostgreSQL, MongoDB)",
+      "Knowledge of web security best practices",
+      "Strong debugging and problem-solving skills"
+    ],
+    "companyDescription": "WebCrafters builds custom web applications for startups and enterprises.",
+    "postedDate": "2024-01-19"
+  },
+  {
+    "id": "8",
+    "title": "Business Analyst",
+    "company": "Strategy Consultants",
+    "companyLogo": "S",
+    "location": "Chicago, USA",
+    "experienceLevel": "Mid-level",
+    "jobType": "Full-time",
+    "category": "Product",
+    "salary": {
+      "min": 85000,
+      "max": 110000,
+      "currency": "USD"
+    },
+    "description": "Help our clients solve complex business challenges through data analysis and strategic recommendations.",
+    "responsibilities": [
+      "Gather and document business requirements",
+      "Analyze business processes and identify improvements",
+      "Create detailed reports and presentations",
+      "Facilitate workshops with stakeholders",
+      "Support project implementation"
+    ],
+    "qualifications": [
+      "2+ years as a Business Analyst",
+      "Strong analytical and problem-solving skills",
+      "Proficiency in Excel and data visualization tools",
+      "Excellent presentation skills",
+      "MBA or relevant certification preferred"
+    ],
+    "companyDescription": "Strategy Consultants partners with organizations to drive business transformation.",
+    "postedDate": "2024-01-21"
+  },
+  {
+    "id": "9",
+    "title": "Software Engineer Intern",
+    "company": "Future Tech",
+    "companyLogo": "F",
+    "location": "Boston, USA",
+    "experienceLevel": "Internship",
+    "jobType": "Part-time",
+    "category": "Backend",
+    "salary": {
+      "min": 25,
+      "max": 35,
+      "currency": "USD"
+    },
+    "description": "Gain hands-on experience building scalable backend systems in our summer internship program.",
+    "responsibilities": [
+      "Assist in developing backend services",
+      "Write clean, maintainable code",
+      "Participate in code reviews",
+      "Learn from senior engineers",
+      "Contribute to team projects"
+    ],
+    "qualifications": [
+      "Currently pursuing CS degree or bootcamp",
+      "Basic knowledge of programming (Python, Java, or Go)",
+      "Familiarity with databases and APIs",
+      "Eagerness to learn and grow",
+      "Good communication skills"
+    ],
+    "companyDescription": "Future Tech is an innovative startup building the next generation of developer tools.",
+    "postedDate": "2024-01-26"
+  }
+]
