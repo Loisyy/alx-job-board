@@ -1,47 +1,51 @@
 import React, { useState } from 'react';
-import { JobsProvider } from './context/JobsContext'; // Context provider for global job state
-import FilterBar from './components/jobs/FilterBar'; // Filter component for job search
-import JobList from './components/jobs/JobList'; // Job listings component
-import { Job } from './types'; // TypeScript type for Job object
-import './App.css'; // Global CSS (if any additional styles are needed)
+// JobsProvider provides global context for jobs (like filters, job list, etc.)
+import { JobsProvider } from './context/JobsContext'; 
+// FilterBar allows users to filter jobs by type, location, etc.
+import FilterBar from './components/jobs/FilterBar';
+// JobList displays the list of job postings
+import JobList from './components/jobs/JobList';
+// ApplyModal shows the form to apply to a selected job
+import ApplyModal from './components/jobs/ApplyModal';
+// Type for a Job
+import { Job } from './types';
+import './App.css'; // Global styles
 
+// Main App component
 function App() {
-  // -------------------------------
-  // Local State
-  // -------------------------------
-  // selectedJob will store the job the user wants to apply for
+  // State to store the currently selected job (when user clicks "Apply")
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
-  // -------------------------------
-  // Handlers
-  // -------------------------------
-  // Triggered when user clicks "Apply" on a JobCard
+  // State to control whether the ApplyModal is visible
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to open the ApplyModal with a specific job
   const handleOpenApplyModal = (job: Job) => {
-    setSelectedJob(job); // Set the selected job in state
-    console.log('Open apply modal for:', job.title); // Temporary log
-    // TODO: Open modal with job details for application
+    setSelectedJob(job); // Set the job the user wants to apply for
+    setIsModalOpen(true); // Open the modal
   };
 
-  // -------------------------------
-  // Main JSX
-  // -------------------------------
+  // Function to close the ApplyModal
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close modal immediately
+    // Clear selectedJob after a short delay to allow modal closing animation
+    setTimeout(() => setSelectedJob(null), 300);
+  };
+
   return (
-    // -------------------------------
-    // JobsProvider wraps the app to provide job data to children
-    // -------------------------------
+    // Wrap the app in JobsProvider to give access to job-related context globally
     <JobsProvider>
       <div className="min-h-screen bg-gray-50">
-        {/* -------------------------------
-            Header Section
-        ------------------------------- */}
+        
+        {/* Header Section */}
         <header className="bg-white shadow-sm">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              
-              {/* Logo and Branding */}
+
+              {/* Logo and Site Name */}
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                  {/* Logo Icon */}
+                  {/* Logo SVG */}
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -58,8 +62,8 @@ function App() {
                 </div>
                 <span className="text-xl font-bold text-gray-900">HireHub</span>
               </div>
-              
-              {/* Navigation Links - hidden on mobile */}
+
+              {/* Navigation links (desktop only) */}
               <nav className="hidden md:flex items-center gap-6">
                 <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">
                   Home
@@ -72,7 +76,7 @@ function App() {
                 </a>
               </nav>
 
-              {/* Authentication Buttons */}
+              {/* Login/Sign Up Buttons */}
               <div className="flex items-center gap-3">
                 <button className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2">
                   Login
@@ -85,11 +89,8 @@ function App() {
           </div>
         </header>
 
-        {/* -------------------------------
-            Main Content
-        ------------------------------- */}
+        {/* Main Content */}
         <main className="container mx-auto px-4 py-8">
-          
           {/* Hero Section */}
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
@@ -98,26 +99,23 @@ function App() {
             <p className="text-gray-600 text-lg">With HireHub</p>
           </div>
 
-          {/* Filter Bar */}
+          {/* Filter Bar Component */}
           <FilterBar />
 
-          {/* Job Listings - passes callback to open modal */}
+          {/* Job Listings Component */}
           <JobList onOpenApplyModal={handleOpenApplyModal} />
         </main>
 
-        {/* -------------------------------
-            Footer Section
-        ------------------------------- */}
+        {/* Footer Section */}
         <footer className="bg-white border-t border-gray-200 mt-16">
           <div className="container mx-auto px-4 py-8">
-            
-            {/* Footer Links Grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               
-              {/* Brand Info */}
+              {/* About Section */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+                    {/* Logo SVG */}
                     <svg
                       className="w-5 h-5 text-white"
                       fill="none"
@@ -173,12 +171,19 @@ function App() {
               </div>
             </div>
 
-            {/* Footer Copyright */}
+            {/* Footer Bottom */}
             <div className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-600">
               © 2026 HireHub. All rights reserved.
             </div>
           </div>
         </footer>
+
+        {/* Apply Modal Component */}
+        <ApplyModal 
+          job={selectedJob}  // Pass the selected job to the modal
+          isOpen={isModalOpen} // Controls modal visibility
+          onClose={handleCloseModal} // Close modal callback
+        />
       </div>
     </JobsProvider>
   );
