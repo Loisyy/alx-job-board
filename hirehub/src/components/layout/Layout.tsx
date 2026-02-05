@@ -2,18 +2,15 @@ import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 const Layout: React.FC = () => {
-  // State to track whether the mobile menu is open
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      
-      {/* Header Section */}
+      {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-
-            {/* Logo & Brand */}
+            {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
               <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
                 <svg
@@ -33,57 +30,47 @@ const Layout: React.FC = () => {
               <span className="text-xl font-bold text-gray-900">HireHub</span>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-6">
               <Link to="/" className="text-gray-600 hover:text-gray-900 font-medium">
                 Home
               </Link>
-              <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">
+              <Link to="/jobs" className="text-gray-600 hover:text-gray-900 font-medium">
                 Find Jobs
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">
+              </Link>
+              <Link to="/companies" className="text-gray-600 hover:text-gray-900 font-medium">
                 Companies
-              </a>
+              </Link>
             </nav>
 
-            {/* Desktop Auth Buttons */}
+            {/* Desktop Auth */}
             <div className="hidden md:flex items-center gap-3">
-              <button className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2">
+              <button
+                type="button"
+                className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2"
+              >
                 Login
               </button>
-              <button className="bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors">
+              <button
+                type="button"
+                className="bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
+              >
                 Sign Up
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-gray-600 hover:text-gray-900 focus:ring-2 focus:ring-primary-500 rounded-lg"
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {/* Show X icon when menu is open, hamburger when closed */}
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -91,28 +78,17 @@ const Layout: React.FC = () => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+            <div className="md:hidden mt-4 pt-4 border-t border-gray-200">
               <nav className="flex flex-col gap-4">
-                <Link
-                  to="/"
-                  className="text-gray-600 hover:text-gray-900 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)} // close menu on link click
-                >
-                  Home
-                </Link>
-                <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">
-                  Find Jobs
-                </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">
-                  Companies
-                </a>
+                <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                <Link to="/jobs" onClick={() => setIsMobileMenuOpen(false)}>Find Jobs</Link>
+                <Link to="/companies" onClick={() => setIsMobileMenuOpen(false)}>Companies</Link>
 
-                {/* Mobile Auth Buttons */}
                 <div className="flex flex-col gap-2 pt-4 border-t border-gray-200">
-                  <button className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2 border border-gray-300 rounded-lg">
+                  <button type="button" className="border border-gray-300 rounded-lg px-4 py-2">
                     Login
                   </button>
-                  <button className="bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors">
+                  <button type="button" className="bg-primary-600 text-white rounded-lg px-4 py-2">
                     Sign Up
                   </button>
                 </div>
@@ -122,76 +98,51 @@ const Layout: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content: Render child routes via Outlet */}
+      {/* Main */}
       <main className="container mx-auto px-4 py-8 flex-1">
         <Outlet />
       </main>
 
-      {/* Footer Section */}
+      {/* Footer */}
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Brand & description */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <span className="font-bold text-gray-900">HireHub</span>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Find your dream job with ease.
-              </p>
+              <p className="text-gray-600 text-sm">Find your dream job with ease.</p>
             </div>
 
-            {/* Company Links */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Company</h3>
+              <h3 className="font-semibold mb-3">Company</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-gray-900">About Us</a></li>
-                <li><a href="#" className="hover:text-gray-900">Careers</a></li>
-                <li><a href="#" className="hover:text-gray-900">Blog</a></li>
-                <li><a href="#" className="hover:text-gray-900">Press</a></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/careers">Careers</Link></li>
+                <li><Link to="/blog">Blog</Link></li>
+                <li><Link to="/press">Press</Link></li>
               </ul>
             </div>
 
-            {/* Candidate Links */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Candidates</h3>
+              <h3 className="font-semibold mb-3">Candidates</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-gray-900">Browse Jobs</a></li>
-                <li><a href="#" className="hover:text-gray-900">Salary Tools</a></li>
-                <li><a href="#" className="hover:text-gray-900">Resume Help</a></li>
-                <li><a href="#" className="hover:text-gray-900">Job Alerts</a></li>
+                <li><Link to="/jobs">Browse Jobs</Link></li>
+                <li><Link to="/salary-tools">Salary Tools</Link></li>
+                <li><Link to="/resume-help">Resume Help</Link></li>
+                <li><Link to="/job-alerts">Job Alerts</Link></li>
               </ul>
             </div>
 
-            {/* Employer Links */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Employers</h3>
+              <h3 className="font-semibold mb-3">Employers</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-gray-900">Post a Job</a></li>
-                <li><a href="#" className="hover:text-gray-900">Candidate Search</a></li>
-                <li><a href="#" className="hover:text-gray-900">Pricing</a></li>
-                <li><a href="#" className="hover:text-gray-900">Employer Hub</a></li>
+                <li><Link to="/post-job">Post a Job</Link></li>
+                <li><Link to="/candidate-search">Candidate Search</Link></li>
+                <li><Link to="/pricing">Pricing</Link></li>
+                <li><Link to="/employer-hub">Employer Hub</Link></li>
               </ul>
             </div>
           </div>
 
-          {/* Footer Copyright */}
-          <div className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-600">
+          <div className="border-t mt-8 pt-8 text-center text-sm text-gray-600">
             © 2026 HireHub. All rights reserved.
           </div>
         </div>
