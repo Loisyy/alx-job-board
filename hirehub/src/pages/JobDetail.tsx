@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { fetchJobById } from '../api/jobsAPI';
 import { Job } from '../types';
 import ApplyModal from '../components/jobs/ApplyModal';
@@ -8,7 +8,6 @@ import ScrollToTop from '../components/common/ScrollToTop';
 const JobDetail: React.FC = () => {
   // Get the dynamic job ID from the URL
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
 
   // State to store the fetched job data
   const [job, setJob] = useState<Job | null>(null);

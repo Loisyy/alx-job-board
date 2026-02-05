@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Job, JobApplication } from '../../types'; // Import types for Job & JobApplication (for type safety)
+import { Job } from '../../types'; // Import types for Job & JobApplication (for type safety)
 
 // Props for the ApplyModal component
 interface ApplyModalProps {
