@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 const Layout: React.FC = () => {
+  // State to track whether the mobile menu is open
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Header */}
+      
+      {/* Header Section */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
+
+            {/* Logo & Brand */}
             <Link to="/" className="flex items-center gap-2">
               <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
                 <svg
@@ -28,7 +32,7 @@ const Layout: React.FC = () => {
               </div>
               <span className="text-xl font-bold text-gray-900">HireHub</span>
             </Link>
-            
+
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6">
               <Link to="/" className="text-gray-600 hover:text-gray-900 font-medium">
@@ -42,6 +46,7 @@ const Layout: React.FC = () => {
               </a>
             </nav>
 
+            {/* Desktop Auth Buttons */}
             <div className="hidden md:flex items-center gap-3">
               <button className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2">
                 Login
@@ -64,6 +69,7 @@ const Layout: React.FC = () => {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
+                {/* Show X icon when menu is open, hamburger when closed */}
                 {isMobileMenuOpen ? (
                   <path
                     strokeLinecap="round"
@@ -90,7 +96,7 @@ const Layout: React.FC = () => {
                 <Link
                   to="/"
                   className="text-gray-600 hover:text-gray-900 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => setIsMobileMenuOpen(false)} // close menu on link click
                 >
                   Home
                 </Link>
@@ -100,6 +106,8 @@ const Layout: React.FC = () => {
                 <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">
                   Companies
                 </a>
+
+                {/* Mobile Auth Buttons */}
                 <div className="flex flex-col gap-2 pt-4 border-t border-gray-200">
                   <button className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2 border border-gray-300 rounded-lg">
                     Login
@@ -114,15 +122,16 @@ const Layout: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content */}
+      {/* Main Content: Render child routes via Outlet */}
       <main className="container mx-auto px-4 py-8 flex-1">
         <Outlet />
       </main>
 
-      {/* Footer */}
+      {/* Footer Section */}
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Brand & description */}
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
@@ -147,37 +156,41 @@ const Layout: React.FC = () => {
               </p>
             </div>
 
+            {/* Company Links */}
             <div>
-  <h3 className="font-semibold text-gray-900 mb-3">Company</h3>
-  <ul className="space-y-2 text-sm text-gray-600">
-    <li><Link to="/about" className="hover:text-gray-900">About Us</Link></li>
-    <li><Link to="/careers" className="hover:text-gray-900">Careers</Link></li>
-    <li><Link to="/blog" className="hover:text-gray-900">Blog</Link></li>
-    <li><Link to="/press" className="hover:text-gray-900">Press</Link></li>
-  </ul>
-</div>
+              <h3 className="font-semibold text-gray-900 mb-3">Company</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">About Us</a></li>
+                <li><a href="#" className="hover:text-gray-900">Careers</a></li>
+                <li><a href="#" className="hover:text-gray-900">Blog</a></li>
+                <li><a href="#" className="hover:text-gray-900">Press</a></li>
+              </ul>
+            </div>
 
-<div>
-  <h3 className="font-semibold text-gray-900 mb-3">Candidates</h3>
-  <ul className="space-y-2 text-sm text-gray-600">
-    <li><Link to="/" className="hover:text-gray-900">Browse Jobs</Link></li>
-    <li><a href="#salary-tools" className="hover:text-gray-900">Salary Tools</a></li>
-    <li><a href="#resume-help" className="hover:text-gray-900">Resume Help</a></li>
-    <li><a href="#job-alerts" className="hover:text-gray-900">Job Alerts</a></li>
-  </ul>
-</div>
+            {/* Candidate Links */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-3">Candidates</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">Browse Jobs</a></li>
+                <li><a href="#" className="hover:text-gray-900">Salary Tools</a></li>
+                <li><a href="#" className="hover:text-gray-900">Resume Help</a></li>
+                <li><a href="#" className="hover:text-gray-900">Job Alerts</a></li>
+              </ul>
+            </div>
 
-<div>
-  <h3 className="font-semibold text-gray-900 mb-3">Employers</h3>
-  <ul className="space-y-2 text-sm text-gray-600">
-    <li><a href="#post-job" className="hover:text-gray-900">Post a Job</a></li>
-    <li><a href="#candidate-search" className="hover:text-gray-900">Candidate Search</a></li>
-    <li><a href="#pricing" className="hover:text-gray-900">Pricing</a></li>
-    <li><a href="#employer-hub" className="hover:text-gray-900">Employer Hub</a></li>
-  </ul>
-</div>
+            {/* Employer Links */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-3">Employers</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900">Post a Job</a></li>
+                <li><a href="#" className="hover:text-gray-900">Candidate Search</a></li>
+                <li><a href="#" className="hover:text-gray-900">Pricing</a></li>
+                <li><a href="#" className="hover:text-gray-900">Employer Hub</a></li>
+              </ul>
+            </div>
           </div>
 
+          {/* Footer Copyright */}
           <div className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-600">
             © 2026 HireHub. All rights reserved.
           </div>
