@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useJobs } from '../../context/JobsContext';
 import JobCard from './JobCard';
 import { Job } from '../../types';
@@ -9,12 +10,15 @@ interface JobListProps {
 
 const JobList: React.FC<JobListProps> = ({ onOpenApplyModal }) => {
   const { filteredJobs, isLoading, error } = useJobs(); // Get jobs and state from context
+  const navigate = useNavigate();
+
 
   // Handler for "View Details" action
   const handleViewDetails = (jobId: string) => {
-    // Currently just logs the ID; can integrate routing later
-    console.log('View details for job:', jobId);
-    // TODO: Implement navigation to job detail page
+    // Implement navigation to job detail page
+    navigate(`/job/${jobId}`);
+    window.scrollTo(0,0);
+    
   };
 
   // -------------------------------
