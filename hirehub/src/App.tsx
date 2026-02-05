@@ -5,6 +5,7 @@ import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import JobDetail from './pages/JobDetail';
 import './App.css';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="job/:id" element={<JobDetail />} />
+            <Route path='*' element={<NotFound/>}/>
           </Route>
         </Routes>
       </Router>

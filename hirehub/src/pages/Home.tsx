@@ -1,54 +1,34 @@
 import React, { useState } from 'react';
-
-// Components used on the Home page
 import FilterBar from '../components/jobs/FilterBar';
 import JobList from '../components/jobs/JobList';
 import ApplyModal from '../components/jobs/ApplyModal';
-
-// Job type definition (TypeScript)
+import FeaturedCompanies from '../components/common/FeaturedCompanies';
+import ScrollToTop from '../components/common/ScrollToTop';
 import { Job } from '../types';
 
-// Home page component
 const Home: React.FC = () => {
-  /**
-   * Holds the job the user clicked on.
-   * - Job → when a job is selected
-   * - null → when no job is selected
-   */
+  // State to track which job is selected for applying
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
-  /**
-   * Controls whether the Apply Modal is open or closed
-   * false → modal hidden
-   * true  → modal visible
-   */
+  // State to control whether the Apply Modal is open
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  /**
-   * Called when the user clicks "Apply" on a job
-   * - Stores the clicked job
-   * - Opens the modal
-   */
+  // Function to open the Apply Modal and set the selected job
   const handleOpenApplyModal = (job: Job) => {
     setSelectedJob(job);
     setIsModalOpen(true);
   };
 
-  /**
-   * Called when the modal is closed
-   * - Closes the modal immediately
-   * - Clears the selected job after 300ms (for close animation)
-   */
+  // Function to close the Apply Modal and reset the selected job
   const handleCloseModal = () => {
     setIsModalOpen(false);
-
-    // Delay clearing the job so the modal close animation can finish
+    // Delay resetting selectedJob to allow modal close animation
     setTimeout(() => setSelectedJob(null), 300);
   };
 
   return (
     <>
-      {/* Hero Section (page heading) */}
+      {/* Hero Section */}
       <div className="mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
           Find Your <span className="text-primary-600">Dream Job</span>
@@ -56,24 +36,20 @@ const Home: React.FC = () => {
         <p className="text-gray-600 text-lg">With HireHub</p>
       </div>
 
-      {/* Filter options for searching jobs */}
+      {/* Filter Bar: Allows users to filter job listings */}
       <FilterBar />
 
-      {/* Job list
-          Passes handleOpenApplyModal down so each job can open the modal
-      */}
+      {/* Featured Companies Section */}
+      <FeaturedCompanies />
+
+      {/* Job Listings: displays jobs and allows opening the apply modal */}
       <JobList onOpenApplyModal={handleOpenApplyModal} />
 
-      {/* Apply Modal
-          - job: the currently selected job
-          - isOpen: controls visibility
-          - onClose: function to close the modal
-      */}
-      <ApplyModal
-        job={selectedJob}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
+      {/* Apply Modal: shows modal to apply for the selected job */}
+      <ApplyModal job={selectedJob} isOpen={isModalOpen} onClose={handleCloseModal} />
+
+      {/* Scroll to Top Button: appears when user scrolls down */}
+      <ScrollToTop />
     </>
   );
 };

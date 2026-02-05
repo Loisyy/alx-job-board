@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { fetchJobById } from '../api/jobsAPI';
 import { Job } from '../types';
 import ApplyModal from '../components/jobs/ApplyModal';
+import ScrollToTop from '../components/common/ScrollToTop';
 
 const JobDetail: React.FC = () => {
   // Get the dynamic job ID from the URL
@@ -378,6 +379,8 @@ const JobDetail: React.FC = () => {
 
       {/* Apply Modal */}
       <ApplyModal job={job} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        {/*Scroll to Top Button*/}
+        <ScrollToTop/>
     </>
   );
 };
